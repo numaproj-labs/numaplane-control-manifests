@@ -1,0 +1,14 @@
+apiVersion: numaplane.numaproj.io/v1alpha1
+kind: GitSync
+metadata:
+  name: gitsync-example-keys
+  namespace: numaplane-system
+spec:
+  destinations:
+  - cluster: staging-usw2-k8s
+    namespace: numaflow-pipeline-keys
+  repositoryPaths:
+  - name: sample-pipelin-keys-repo
+    path: sample-pipeline-keys
+    repoUrl: https://github.com/xdevxy/numaflow-example-pipelines.git
+    targetRevision: main
